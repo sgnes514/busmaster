@@ -23,6 +23,7 @@
 #define USAGEMODE   __declspec(dllimport)
 #endif
 
+extern void sendToTraceWin(char* buff, int type);
 #ifdef __cplusplus
 extern "C" {  // only need to export C interface if used by C++ source code
 #endif
@@ -35,6 +36,8 @@ extern "C" {  // only need to export C interface if used by C++ source code
     USAGEMODE HRESULT DIL_UDS_ShowSettingWnd(HWND hParent);
     USAGEMODE HRESULT TX_vSetDILInterfacePtrUDS(void* ptrDILIntrf);
     USAGEMODE HRESULT DIL_MainPanel(HWND hParent,int TotalChannels);
+USAGEMODE HWND DIL_IMMOTEST_MainWnd(HWND hParent);
+USAGEMODE HRESULT EvaluteImmoMessage(STCAN_MSG  Mensaje);
     //int respID;
 
 #ifdef __cplusplus

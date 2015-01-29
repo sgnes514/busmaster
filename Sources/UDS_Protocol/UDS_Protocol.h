@@ -13,12 +13,15 @@
 #include "include/struct_can.h"
 #include "UDSWnd_Defines.h"
 #include "UDS_Resource.h"
-
+#include "ImmoTestMainWnd.h"
+#include "Sia_16_Protocol.h"
+#include "Sia_17_Protocol.h"
 
 extern bool FWaitFlow;
 extern int c_unPreviousTime;
 extern double c_dDiffTime;
 extern int Counter_BSize;
+extern ImmoTestMainWnd* omImmoTestMainWnd;
 
 typedef struct mstCanDataSpl : public STCANDATA
 {

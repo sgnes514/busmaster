@@ -428,10 +428,10 @@ void CUDSSettingsWnd::OnCbnSelchangeComboInterface()
     {
         case INTERFACE_NORMAL_11:
         {
-            m_omReqCanID.vSetValue(0x700);
-            m_omRespCanID.vSetValue(0x700);
-            StringRespCanID= "700";
-            StringReqCanID= "700";
+            m_omReqCanID.vSetValue(0x7E0);
+            m_omRespCanID.vSetValue(0x7E8);
+            StringRespCanID= "7E8";
+            StringReqCanID= "7E0";
             m_omReqCanID. LimitText(3);
             m_omRespCanID. LimitText(3);
 
@@ -746,10 +746,10 @@ void CUDSSettingsWnd::OnDefaultValuesPressed()
     {
         case INTERFACE_NORMAL_11:
         {
-            m_omReqCanID.vSetValue(0x700);
-            m_omRespCanID.vSetValue(0x700);
-            StringRespCanID= "700";
-            StringReqCanID= "700";
+            m_omReqCanID.vSetValue(0x7E0);
+            m_omRespCanID.vSetValue(0x7E8);
+            StringRespCanID= "7E8";
+            StringReqCanID= "7E0";
             m_omCheckMsgDLC.SetCheck(BST_CHECKED);
             m_omFCLength.SetCurSel(1);
         }

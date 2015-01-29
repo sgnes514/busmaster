@@ -14,7 +14,8 @@
 #include "UDSSettingsWnd.h"
 #include "UDS_Protocol.h"
 #include "include/struct_can.h"
-
+#include "Sia_16_Protocol.h"
+#include "Sia_17_Protocol.h"
 
 CUDSMainWnd* omMainWnd = NULL;
 CUDS_NegRespMng* NegRespManager = NULL;
@@ -89,10 +90,10 @@ END_MESSAGE_MAP()
 CUDS_Protocol::CUDS_Protocol()
 {
     omManagerPtr=this;
-    SourceAddress =0;
-    TargetAddress =0;
+    SourceAddress = 0x7E0;
+    TargetAddress = 0x7E8;
     fInterface = INTERFACE_NORMAL_11;
-    MsgID = 0x700;
+    MsgID = 0x7E0;
     numberOfBytes = 1;
     Data_Recibida = "";
     Current_Channel=1 ;
@@ -347,6 +348,10 @@ USAGEMODE HRESULT EvaluateMessage( STCAN_MSG  Mensaje  )
 
         }
         omMainWnd->m_omBytes.vSetValue(Length_Received);
+    }
+    if(omImmoTestMainWnd != NULL)
+    {
+        EvaluteImmoMessage(Mensaje);
     }
     return 0;
 }
